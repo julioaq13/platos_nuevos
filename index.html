@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sugerencia del Chef</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 28px;
+      text-align: center;
+      color: #ff5c8a;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #cc0052;
+    }
+
+    #mensaje {
+      display: none;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      border-left: 4px solid #ff3366;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .heart-particles {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 40px auto 0;
+      display: none;
+    }
+
+    .heart-particles .small-heart {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #ff3366;
+      transform: rotate(45deg);
+      animation: pulse 1.5s infinite;
+    }
+
+    .small-heart::before,
+    .small-heart::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #ff3366;
+      border-radius: 50%;
+    }
+
+    .small-heart::before {
+      top: -6px;
+      left: 0;
+    }
+
+    .small-heart::after {
+      top: 0;
+      left: -6px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.3) rotate(45deg);
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🍣 Sugerencia del Chef</h1>
+  <button onclick="mostrarMensaje()">Ver sugerencia del chef</button>
+
+  <div id="mensaje">
+    <p>Hoy el plato más especial no está en este menú, está frente a mí. Gracias por cada mes, por cada sonrisa y por ser quien eres.</p>
+    <p>Cada mes contigo es como el mejor plato del mundo: me deja con ganas de más.</p>
+    <p>Me deja con más ganas de amarte, de verte, de conocerte, de aprender de ti.</p>
+    <p>Estoy muy agradecido con Dios por ponerte en mi camino, porque eres una mujer excepcional, única, especial, amorosa y miles de cosas más buenas que cada día me doy cuenta que tienes. Hoy en día encontrar una chica como tú es un tesoro.</p>
+    <p>Eres ese tesoro, mi tesoro que no quiero que nadie me arrebate, que quiero cuidar y tener para siempre.</p>
+    <p>Gracias por darme momentos tan lindos, por hacerme ver la vida diferente, por darme ánimo, por impulsarme. Si todo eso no te hace la mejor novia del mundo, no sé qué lo haría.</p>
+    <p>Amo crecer contigo, planear juntos, soñar con ser millonarios (aunque ya me siento millonario contigo). Este amor es nuestro tesoro más valioso.</p>
+    <p>Te amo incondicionalmente. Eres la princesa de mi corazón. ❤️</p>
+    <p><strong>Felices 2 años, mi amor.</strong></p>
+
+    <div class="heart-particles" id="heartAnimation"></div>
+  </div>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById("mensaje").style.display = "block";
+      const heartContainer = document.getElementById("heartAnimation");
+      heartContainer.style.display = "block";
+
+      const positions = [
+        [50, 20], [80, 40], [20, 40], [65, 60], [35, 60],
+        [50, 80], [60, 100], [40, 100], [50, 120]
+      ];
+
+      positions.forEach((pos, i) => {
+        const h = document.createElement("div");
+        h.className = "small-heart";
+        h.style.left = pos[0] + "px";
+        h.style.top = pos[1] + "px";
+        h.style.animationDelay = (i * 0.2) + "s";
+        heartContainer.appendChild(h);
+      });
+    }
+  </script>
+</body>
+</html>
