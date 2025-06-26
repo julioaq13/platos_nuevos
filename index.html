@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú Especial</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 30px;
+      color: #ff5c8a;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 25px;
+      font-size: 18px;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #cc0044;
+    }
+
+    #mensaje {
+      display: none;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-left: 5px solid #ff3366;
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Animación del corazón con estrellas */
+    .corazon-estrellas {
+      position: relative;
+      width: 200px;
+      height: 180px;
+      margin: 40px auto 60px;
+      display: none;
+    }
+
+    .estrella {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #fff;
+      opacity: 0;
+      animation: brillar 1.5s forwards;
+    }
+
+    @keyframes brillar {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenido al Menú Especial de la Noche 🍣</h1>
+  <button onclick="mostrarMensaje()">Ver Sugerencia del Chef ❤️</button>
+
+  <div id="mensaje">
+    <p>Hoy el plato más especial no está en este menú, está frente a mí. Gracias por cada mes, por cada sonrisa y por ser quien eres.</p>
+    <p>Cada mes contigo es como el mejor plato del mundo: me deja con ganas de más.</p>
+    <p>Me deja con más ganas de amarte, de verte, de conocerte, de aprender de ti.</p>
+    <p>Estoy muy agradecido con Dios por ponerte en mi camino, porque eres una mujer excepcional, única, especial, amorosa y miles de cosas más buenas que cada día me doy cuenta que tienes. Hoy en día encontrar una chica como tú es un tesoro.</p>
+    <p>Eres ese tesoro, mi tesoro que no quiero que nadie me arrebate, que quiero cuidar y tener para siempre.</p>
+    <p>Gracias por darme momentos tan lindos, por hacerme ver la vida diferente, por darme ánimo, por impulsarme. Si todo eso no te hace la mejor novia del mundo, no sé qué lo haría.</p>
+    <p>Amo crecer contigo, planear juntos, soñar con ser millonarios (aunque ya me siento millonario contigo). Este amor es nuestro tesoro más valioso.</p>
+    <p>Te amo incondicionalmente. Eres la princesa de mi corazón. ❤️</p>
+    <p><strong>Felices 2 años, mi amor.</strong></p>
+
+    <div class="corazon-estrellas" id="corazon"></div>
+  </div>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById("mensaje").style.display = "block";
+      const corazon = document.getElementById("corazon");
+      corazon.style.display = "block";
+
+      // Coordenadas para formar un corazón con estrellas
+      const puntos = [
+        [50, 20], [60, 10], [70, 10], [80, 20], [85, 30],
+        [80, 45], [70, 60], [60, 70], [50, 75], [40, 70],
+        [30, 60], [20, 45], [
